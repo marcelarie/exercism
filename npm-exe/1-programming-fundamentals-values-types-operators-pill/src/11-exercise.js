@@ -12,7 +12,9 @@ function getTotal() {
   let total;
 
   // Add your code here
-
+  total = a % 5;
+  total += 10;
+  total *= 2;
   // Don’t change this code
   return total;
 }

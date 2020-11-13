@@ -5,7 +5,7 @@
  */
 function weekDays() {
   // Add your code here
-  let days = [];
+  let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   // Don’t change this code
   return days;

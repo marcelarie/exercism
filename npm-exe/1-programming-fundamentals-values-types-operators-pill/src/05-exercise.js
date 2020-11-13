@@ -37,6 +37,7 @@ learnConsoleLog();
 
 export function learnConsoleLog() {
   // Write your code bellow this line
+  console.log('I am Marcel')
 }
 
 /**
@@ -48,6 +49,8 @@ export function learnConsoleLog() {
  */
 export function stringTypeofTest() {
   // Write your code bellow this line
+  var strr = 'string'
+  console.log(typeof (strr));
 }
 
 /**
@@ -59,6 +62,8 @@ export function stringTypeofTest() {
  */
 export function numberTypeofTest() {
   // Write your code bellow this line
+  var numb = 666;
+  console.log(typeof (numb));
 }
 
 /**
@@ -70,6 +75,8 @@ export function numberTypeofTest() {
  */
 export function boolTypeofTest() {
   // Write your code bellow this line
+  var bolee = true;
+  console.log(typeof (bolee));
 }
 
 /**
@@ -82,6 +89,8 @@ export function boolTypeofTest() {
  */
 export function undefinedTypeofTest() {
   // Write your code bellow this line
+  var unde = undefined;
+  console.log(typeof (unde));
 }
 
 /**
@@ -94,6 +103,8 @@ export function undefinedTypeofTest() {
  */
 export function nullTypeofTest() {
   // Write your code bellow this line
+  var nuy = null;
+  console.log(typeof (nuy));
 }
 
 /**
@@ -105,4 +116,6 @@ export function nullTypeofTest() {
  */
 export function arrTypeofTest() {
   // Write your code bellow this line
+  var arr = [1, 2, 3];
+  console.log(typeof (arr))
 }
