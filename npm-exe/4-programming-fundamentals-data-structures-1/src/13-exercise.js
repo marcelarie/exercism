@@ -14,6 +14,7 @@ function exercise13() {
     };
 
     // Write your solution bellow this line
+    return Object.keys(person)
 }
 
 module.exports = exercise13;

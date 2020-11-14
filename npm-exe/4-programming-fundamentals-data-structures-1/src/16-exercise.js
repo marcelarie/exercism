@@ -15,6 +15,8 @@ function exercise16() {
     let copy = {};
 
     // Write your solution bellow this line
+    copy = Object.assign({}, person)
+
 
     // Don’t change the code bellow this line
     return {

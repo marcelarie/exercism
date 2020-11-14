@@ -10,6 +10,8 @@ function exercise20() {
     const cities = ['Barcelona', 'Madrid', 'Lisbon', 'Berlin', 'Paris'];
 
     // Write your solution bellow this line
+    return [cities.indexOf('Lisbon'), cities.indexOf('Paris')]
 }
+console.log(exercise20())
 
 module.exports = exercise20;

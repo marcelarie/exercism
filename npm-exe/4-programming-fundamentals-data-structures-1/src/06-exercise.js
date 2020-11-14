@@ -6,6 +6,7 @@ function exercise06() {
     const names = ['John', 'Mark', 'Ana'];
 
     // Write your solution bellow this line
+    names.shift()
 
     // Don’t change the code bellow this line
     return names;

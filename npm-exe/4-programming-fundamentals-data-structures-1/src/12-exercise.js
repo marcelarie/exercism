@@ -11,6 +11,7 @@ function exercise12() {
     };
 
     // Write your solution bellow this line
+    delete person.password;
 
     // Don’t change the code bellow this line
     return person;

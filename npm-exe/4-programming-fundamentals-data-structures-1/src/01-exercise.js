@@ -13,7 +13,7 @@ function exercise01() {
     const arrayLengths = [];
 
     // write your solution bellow this line
-
+    arrayLengths.push(names.length, cities.length)
     // Don’t change the code bellow this line
     return arrayLengths;
 }

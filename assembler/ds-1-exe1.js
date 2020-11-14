@@ -5,10 +5,11 @@
  * The function should return a new object with the values changed and the new property 
  * without mutating the original object. */
 
-const student = { firstName: 'Ana', lastName: 'Marks', role: 'STUDENT' };
+const student = {firstName: 'Ana', lastName: 'Marks', role: 'STUDENT'};
 function appendEdited(object) {
     const modified = Object.assign({}, object);
-    for ( key in modified ) {
+    delete modified.role
+    for (key in modified) {
         modified[key] = modified[key].concat(' Edited');
     };
     modified.grade = 9.5;

@@ -23,7 +23,9 @@
  */
 function exercise02(person) {
     let result = '';
+    result = 'My name is ' + person.firstname + " " + person.lastname;
 
+    return result;
     // write your solution bellow this line
 }
 

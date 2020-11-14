@@ -30,6 +30,11 @@
  *
  * 2. Return the array of objects
  */
-function exercise18() {}
+function exercise18() {
+    const person1 = {firstName: 'Ana', lastName: 'John', age: 32};
+    const person2 = {firstName: 'Alex', lastName: 'Spence', age: 24};
+    const person3 = {firstName: 'Mark', lastName: 'Smith', age: 43};
+    return [person1, person2, person3];
+}
 
 module.exports = exercise18;

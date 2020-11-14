@@ -14,10 +14,9 @@ function exercise17() {
         lastname: 'Gulman',
         age: 34,
     };
-
-    let copy = {};
-
     // Write your solution bellow this line
+    const copy = Object.assign({}, person, {ocupation: 'developer', role: 'sys-admin'});
+    return copy
 }
 
 module.exports = exercise17;

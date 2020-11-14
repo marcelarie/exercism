@@ -12,25 +12,29 @@
  */
 function exercise22() {
     const cities = [
-        { id: 10, name: 'Barcelona' },
-        { id: 11, name: 'Bucharest' },
-        { id: 12, name: 'Madrid' },
-        { id: 13, name: 'Barcelona' },
-        { id: 14, name: 'Bucharest' },
-        { id: 15, name: 'Barcelona' },
-        { id: 16, name: 'Lisbon' },
-        { id: 17, name: 'Berlin' },
-        { id: 18, name: 'Barcelona' },
-        { id: 19, name: 'Barcelona' },
-        { id: 20, name: 'Sevilla' },
-        { id: 21, name: 'Barcelona' },
-        { id: 21, name: 'Barcelona' },
-        { id: 21, name: 'Barcelona' },
-        { id: 21, name: 'Bucharest' },
-        { id: 21, name: 'Berlin' },
+        {id: 10, name: 'Barcelona'},
+        {id: 11, name: 'Bucharest'},
+        {id: 12, name: 'Madrid'},
+        {id: 13, name: 'Barcelona'},
+        {id: 14, name: 'Bucharest'},
+        {id: 15, name: 'Barcelona'},
+        {id: 16, name: 'Lisbon'},
+        {id: 17, name: 'Berlin'},
+        {id: 18, name: 'Barcelona'},
+        {id: 19, name: 'Barcelona'},
+        {id: 20, name: 'Sevilla'},
+        {id: 21, name: 'Barcelona'},
+        {id: 21, name: 'Barcelona'},
+        {id: 21, name: 'Barcelona'},
+        {id: 21, name: 'Bucharest'},
+        {id: 21, name: 'Berlin'},
     ];
 
     // Write your solution bellow this line
+    let arr = []
+    cities.forEach(i => arr.push(i.name))
+    return [...new Set(arr)]
 }
 
+console.log(exercise22())
 module.exports = exercise22;

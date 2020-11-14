@@ -94,6 +94,18 @@ function exercise21() {
             },
         ],
     ];
-}
+    let arr = []
+    for (let item in data) {
+        for (let x in data[item]) {
+            for (let z in data[item][x]) {
+                let len = data[item][x][z].length
+                if (z === 'email' && len >= 22) {
+                    arr.push(data[item][x][z]);
+                };
+            }
+        }
+    }
+    return arr;
+};
 
 module.exports = exercise21;

@@ -10,6 +10,12 @@
  */
 function exercise11() {
     // Write your solution bellow this line
+    const Barcelona = {
+        name: 'Barcelona',
+        districtsCount: 10,
+        districts: ['Ciutat Vella', 'Eixample', 'Sants-Montjuic', 'Les Corts']
+    };
+    return Barcelona;
 }
 
 module.exports = exercise11;

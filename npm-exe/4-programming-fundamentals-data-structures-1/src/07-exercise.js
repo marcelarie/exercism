@@ -8,7 +8,7 @@ function exercise07() {
     const names = ['Mark', 'Ana'];
 
     // Write your solution bellow this line
-
+    names.unshift('Alex')
     // Don’t change the code bellow this line
     return names;
 }

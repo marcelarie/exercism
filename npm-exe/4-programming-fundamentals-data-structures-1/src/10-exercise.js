@@ -11,6 +11,9 @@ function exercise10() {
     };
 
     // Write your solution bellow this line
+    data.employees.push('Alex')
+    return data;
 }
+console.log(exercise10())
 
 module.exports = exercise10;

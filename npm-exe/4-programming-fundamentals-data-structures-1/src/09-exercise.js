@@ -17,6 +17,13 @@ function exercise09() {
     let nameLengths = [];
 
     // Write your solution bellow this line
+    nameLengths = cities.map(i => {
+        if (i.length < 8) {
+            return 'short name';
+        } else {
+            return 'long name';
+        };
+    });
 
     // Don’t change the code bellow this line
     return {
@@ -24,5 +31,6 @@ function exercise09() {
         nameLengths: nameLengths,
     };
 }
+console.log(exercise09())
 
 module.exports = exercise09;

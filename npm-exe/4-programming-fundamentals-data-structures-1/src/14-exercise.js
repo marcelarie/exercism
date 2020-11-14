@@ -14,6 +14,7 @@ function exercise14() {
     };
 
     // Write your solution bellow this line
+    return Object.values(person);
 }
 
 module.exports = exercise14;

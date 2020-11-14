@@ -28,6 +28,6 @@ function exercise19() {
             grade: 6,
         },
     ];
+    return arr = students.map(i => i.grade)
 }
-
 module.exports = exercise19;
