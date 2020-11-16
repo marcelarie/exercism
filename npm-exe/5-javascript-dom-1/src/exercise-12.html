@@ -74,8 +74,13 @@
        *
        * Add the event listener and finish the code of the function
        */
-
-      function addElement() {}
+        let btn = document.getElementById('add_element')
+        btn.addEventListener('click', addElement )
+      function addElement() {
+          let newLi = document.createElement('li')
+          newLi.textContent = 'Monday'
+          newLi.classList.add('weekday-item')
+      }
     </script>
     <script src="./__tests__/exercise-12.js"></script>
   </body>

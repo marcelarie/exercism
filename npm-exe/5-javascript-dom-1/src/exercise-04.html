@@ -46,11 +46,17 @@
        *
        * Finish the code of the function
        */
+    const css = { textDecoration: 'underline', fontSize: '24px', padding: '12px' }
       function changeContent() {
           let weekDayP = document.querySelector(".weekday-item--primary");
-          weekDayP.style.textDecoration = 'underline';
+          /* for ( key in css ) {
+              weekDayP.style[key] = css[key]
+          }*/
+           Object.assign(weekDayP.style, css)
+          /* weekDayP.style.textDecoration = 'underline';
           weekDayP.style.fontSize = '24px';
           weekDayP.style.padding = '12px';
+          */
       }
 
       /**
