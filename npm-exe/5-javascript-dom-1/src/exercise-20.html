@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      img.hovered {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise20()</code> the check your solution.
+      </p>
+      <p>
+        Learn how to use the <code>getAttribute</code> and
+        <code>removeAttribute</code> methods of dom nodes to access their
+        properties.
+      </p>
+      <p>
+        Get all the <code>li</code> elements in the list bellow and use
+        <code>getAttribute</code> to get the value of the
+        <code>data-lastname</code> attribute of each <code>li</code> element to
+        concatenate the last name to the text content of the
+        <code>li</code> element so that it has a full name as text content.
+      </p>
+      <p>
+        Then use the <code>removeAttribute</code> method to remove the
+        <code>data-lastname</code> attribute of the <code>li</code> element.
+      </p>
+      <p>
+        The <code>addLastNames</code> function should be called when the
+        <code>Add Last Names</code> button is clicked.
+      </p>
+      <p>
+        <strong>Example:</strong>
+      </p>
+      <p>
+        <code>
+          let lastName = li.getAttribute('data-lastname'); // perez
+        </code>
+      </p>
+      <p>
+        The final <code>li</code> elements should have the
+        <code>data-lastname</code> property removed and a text content of:
+      </p>
+      <p>
+        <code>
+          &lt;li data-lastname="perez"&gt;ana&lt;/li&gt;
+        </code>
+        becomes
+        <code>
+          &lt;li&gt;ana perez&lt;li&gt;
+        </code>
+      </p>
+    </div>
+    <div>
+      <hr />
+      <button id="add_last_names">
+        Add Last Names
+      </button>
+      <div class="ex-wrapper">
+        <ul class="list-container">
+          <li data-lastname="perez">ana</li>
+          <li data-lastname="smith">alex</li>
+          <li data-lastname="jonsibal">mark</li>
+          <li data-lastname="park">john</li>
+          <li data-lastname="tilt">andrew</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 20
+       *
+       * Add the event listener and finish the code of the function
+       */
+
+      function addLastNames() {}
+    </script>
+    <script src="./__tests__/exercise-20.js"></script>
+  </body>
+</html>

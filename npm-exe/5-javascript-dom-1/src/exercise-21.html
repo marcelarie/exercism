@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      img.hovered {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise21()</code> the check your solution.
+      </p>
+      <p>
+        Complete the code of the <code>handleSubmit</code> function to output
+        the form values as paragraphs when the form is submitted.
+      </p>
+      <ul>
+        <li>
+          add an event listener of <code>submit</code> using
+          <code>addEventListener</code> on the form element.
+        </li>
+        <li>
+          prevent the default action of submitting a form with
+          <code>event.preventDefault()</code>
+        </li>
+        <li>
+          access the values of the <code>firstName</code>,
+          <code>lastName</code> and <code>email</code> fields to create 2
+          <code>p</code> element paragraphs with the contents:
+          <ul>
+            <li>
+              'Name:' + empty space + value of <code>firstName</code> field +
+              empty space + value of the <code>lastName</code> field.
+            </li>
+            <li><strong>Example: </strong><code>Name: Ana Maria</code></li>
+            <li>'Email:' + empty space + value of <code>email</code> field.</li>
+            <li><strong>Example: </strong><code>Email: ana@mail.com</code></li>
+          </ul>
+        </li>
+        <li>append the paragraphs as the last child elements of the form.</li>
+      </ul>
+      <p>
+        The form fields can be accessed either by using
+        <code>querySelector</code> or any method to query DOM elements with
+        JavaScript, or by using the event parameter of the function
+        <code>event.target.elements.fieldNameInTheForm.value</code>
+      </p>
+      <p>
+        <strong>Example: </strong
+        ><code>event.target.elements.firstName.value</code> will have the value
+        of the input field with a name of: <code>firstName</code>.
+      </p>
+    </div>
+    <div>
+      <hr />
+      <div class="ex-wrapper">
+        <form action="/" method="post" id="contact-form">
+          <label for="firstName">
+            First name
+            <input type="text" name="firstName" id="firstName" value="alex" />
+          </label>
+          <label for="lastName">
+            Last name
+            <input type="text" name="lastName" id="lastName" value="spence" />
+          </label>
+          <label for="email">
+            Email
+            <input type="email" name="email" id="email" value="alex@mail.com" />
+          </label>
+          <button id="submit_btn">submit</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 21
+       *
+       * Add the event listeners and finish the code of the function
+       */
+
+      function handleSubmit(event) {}
+    </script>
+    <script src="./__tests__/exercise-21.js"></script>
+  </body>
+</html>

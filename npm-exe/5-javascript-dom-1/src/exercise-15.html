@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .list-container:nth-of-type(2) {
+        margin-top: 16px;
+        border-top: 1px solid lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise15()</code> the check your solution.
+      </p>
+      <p>
+        Add a <code>click</code> event listener on the
+        <code>Clone list</code> button to execute the
+        <code>cloneList</code> function to:
+      </p>
+      <ul>
+        <li>
+          create a <code>deep clone</code> of the <code>list-container</code>
+          <code>ul</code> list.
+        </li>
+        <li>
+          the cloned list should be added as a child element of the
+          <code>ex-wrapper</code> <code>div</code> after the existing list.
+        </li>
+        <li>the cloned list should have an id of <code>new_list</code>.</li>
+        <li>
+          <code>HINT</code>: you will need to set the
+          <code>deep</code> parameter of the <code>cloneElement()</code> method
+          to <code>true</code> to copy all the children not just the parent
+          node.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <hr />
+      <button id="clone_list">
+        Clone list
+      </button>
+      <div class="ex-wrapper">
+        <ul class="list-container">
+          <li class="weekday-item">Monday</li>
+          <li class="weekday-item">Tuesday</li>
+          <li class="weekday-item">Wednesday</li>
+          <li class="weekday-item">Thursday</li>
+          <li class="weekday-item">Friday</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 15
+       *
+       * Add the event listener and finish the code of the function
+       */
+
+      function cloneList() {}
+    </script>
+    <script src="./__tests__/exercise-15.js"></script>
+  </body>
+</html>

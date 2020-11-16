@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise14()</code> the check your solution.
+      </p>
+      <p>
+        Add a <code>click</code> event listener on the
+        <code>Add list</code> button to execute the
+        <code>addList</code> function to:
+      </p>
+      <ul>
+        <li>
+          create a <code>ul</code> list based on the week days in the days array
+          with an <code>li</code> element for each day.
+        </li>
+        <li>
+          the <code>ul</code> list parent element should have a class of
+          <code>list-container</code>.
+        </li>
+        <li>
+          each li child element should have a class of
+          <code>weekday-item</code> and the text content of the day from the
+          array (using a loop to create the elements).
+        </li>
+        <li>
+          the list should be added as a child element of the
+          <code>ex-wrapper</code> <code>div</code>.
+        </li>
+        <li>the list should only be added once.</li>
+        <li>
+          <code>HINT</code>: use the <code>childElementCount</code> property to
+          check if the parent has no child elements.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <hr />
+      <button id="add_list">
+        Add list
+      </button>
+      <div class="ex-wrapper"></div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 14
+       *
+       * Add the event listener and finish the code of the function
+       */
+
+      function addList() {
+        let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+      }
+    </script>
+    <script src="./__tests__/exercise-14.js"></script>
+  </body>
+</html>

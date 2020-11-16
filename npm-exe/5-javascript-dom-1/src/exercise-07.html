@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise07()</code> the check your solution.
+      </p>
+      <p>
+        Complete the code of the functions bellow to:
+      </p>
+      <ul>
+        <li>
+          use one of the methods you have used so far to get the the parent
+          element with the class of <code>list-container</code> from bellow.
+        </li>
+        <li>
+          complete the code of the <code>removeFirstElement()</code> function to
+          remove the
+          <strong>
+            first element child
+          </strong>
+          of the <code>list-container</code> when the
+          <code>Remove first element</code> button is clicked.
+        </li>
+        <li>
+          complete the code of the <code>removeLastElement()</code> function to
+          remove the
+          <strong>
+            last element child
+          </strong>
+          of the <code>list-container</code> when the
+          <code>Remove last element</code> button is clicked.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <hr />
+      <button id="remove_first_btn" onclick="removeFirstElement()">
+        Remove first element
+      </button>
+      <button id="remove_last_btn" onclick="removeLastElement()">
+        Remove last element
+      </button>
+      <div class="ex-wrapper">
+        <ul class="list-container">
+          <li data-testid="weekday-item-1" class="weekday-item">Monday</li>
+          <li data-testid="weekday-item-2" class="weekday-item">Tuesday</li>
+          <li data-testid="weekday-item-3" class="weekday-item">Wednesday</li>
+          <li data-testid="weekday-item-4" class="weekday-item">Thursday</li>
+          <li data-testid="weekday-item-5" class="weekday-item">Friday</li>
+          <li data-testid="weekday-item-6" class="weekday-item">Saturday</li>
+          <li data-testid="weekday-item-7" class="weekday-item">Sunday</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 07
+       *
+       * Finish the code of the functions
+       */
+      function removeFirstElement() {}
+
+      function removeLastElement() {}
+    </script>
+    <script src="./__tests__/exercise-07.js"></script>
+  </body>
+</html>
