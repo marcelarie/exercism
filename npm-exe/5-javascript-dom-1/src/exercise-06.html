@@ -51,7 +51,13 @@
        *
        * Finish the code of the function
        */
-      function styleContent() {}
+      function styleContent() {
+          let oddItems = document.querySelectorAll('.weekday-item:nth-child(odd)')
+          oddItems.forEach( i => { 
+              i.style.backgroundColor = 'azure'
+              i.style.fontWeight = 'bold'
+          })
+      }
 
       /**
        * JavaScript Exercises - 06

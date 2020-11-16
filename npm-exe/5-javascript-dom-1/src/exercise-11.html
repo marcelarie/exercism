@@ -75,8 +75,19 @@
        *
        * Add the event listener and finish the code of the function
        */
-
-      function addElement() {}
+      let addButton = document.getElementById('add_element');
+      addButton.addEventListener('click', addElement );
+      let list = document.querySelector('.list-container');
+      let listItems = document.querySelectorAll('.weekday-item');
+      let newLi =  document.createElement('li')
+      newLi.textContent = 'Monday'
+      newLi.classList.add('weekday-item')
+      function addElement() {
+          if ( listItems.length === 4 ) {
+              list.insertAdjacentElement('afterbegin', newLi )
+          }
+          
+      }
     </script>
     <script src="./__tests__/exercise-11.js"></script>
   </body>

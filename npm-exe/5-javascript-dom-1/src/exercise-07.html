@@ -73,9 +73,15 @@
        *
        * Finish the code of the functions
        */
-      function removeFirstElement() {}
+      function removeFirstElement() {
+          let unoList = document.getElementsByClassName('list-container');
+          unoList[0].removeChild(unoList[0].firstChild)
+      }
 
-      function removeLastElement() {}
+      function removeLastElement() {
+          let unoList = document.getElementsByClassName('list-container');
+          unoList[0].removeChild(unoList[0].lastChild)
+      }
     </script>
     <script src="./__tests__/exercise-07.js"></script>
   </body>

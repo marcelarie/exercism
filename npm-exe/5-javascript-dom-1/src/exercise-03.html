@@ -45,7 +45,14 @@
        *
        * Finish the code of the function
        */
-      function changeStyles() {}
+      function changeStyles() {
+          let weekDay = document.getElementsByClassName('weekday-item');
+          console.log(weekDay)
+          for ( let i = 0; i < weekDay.length; i++ ) {
+              weekDay[i].style.fontWeight = 'bold';
+              weekDay[i].style.fontSize = '24px';
+          }
+      }
 
       /**
        * JavaScript Exercises - 03

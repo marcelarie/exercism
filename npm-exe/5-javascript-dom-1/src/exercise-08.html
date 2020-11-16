@@ -64,7 +64,18 @@
        *
        * Finish the code of the function
        */
-      function addNewElement() {}
+        let btn = document.getElementById('add-new')
+        btn.addEventListener('click', addNewElement)
+      function addNewElement() {
+          let listCon = document.querySelectorAll('.weekday-item')
+          let list = document.querySelector('.list-container')
+          let newLi = document.createElement('li')
+          newLi.classList.add('weekday-item')
+          newLi.textContent = 'Friday'
+          if ( listCon.length === 4 ) {
+              list.appendChild(newLi)
+          }
+      }
     </script>
     <script src="./__tests__/exercise-08.js"></script>
   </body>
