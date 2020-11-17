@@ -60,7 +60,16 @@
        * Add the event listener and finish the code of the function
        */
 
-      function addHTML() {}
+    let btn = document.getElementById('add_element');
+    btn.addEventListener('click', addHTML );
+      function addHTML() {
+          let list = document.querySelector('.list-container')
+          let condition = document.querySelectorAll('.weekday-item')
+          if ( condition.length === 4 ) {
+              list.insertAdjacentHTML('afterbegin', '<li class="weekday-item">Monday</li>')
+          }
+
+      }
     </script>
     <script src="./__tests__/exercise-13.js"></script>
   </body>

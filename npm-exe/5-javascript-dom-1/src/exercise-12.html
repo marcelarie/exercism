@@ -74,12 +74,17 @@
        *
        * Add the event listener and finish the code of the function
        */
-        let btn = document.getElementById('add_element')
-        btn.addEventListener('click', addElement )
+        let btn = document.getElementById('add_element');
+        btn.addEventListener('click', addElement );
       function addElement() {
-          let newLi = document.createElement('li')
-          newLi.textContent = 'Monday'
-          newLi.classList.add('weekday-item')
+          let listItems = document.querySelectorAll('.weekday-item');
+          let list = document.querySelector('.list-container');
+          let newLi = document.createElement('li');
+          newLi.textContent = 'Monday';
+          newLi.classList.add('weekday-item');
+          if ( listItems.length === 4 ) {
+              list.insertBefore(newLi, listItems[0])
+          }
       }
     </script>
     <script src="./__tests__/exercise-12.js"></script>
