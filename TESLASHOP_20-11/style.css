@@ -106,9 +106,13 @@ label, p, div {
     height: 50px;
     border-radius: 50%;
     margin:0.1em;
+    background-image:radial-gradient(transparent,rgba(0,0,0,0.5));
 }
 .colorButton:hover{
-    opacity:0.6;
+    opacity:0.8;
+}
+#carExtras input {
+    margin-right: 1em;
 }
 .clickable:hover{
     cursor: pointer
@@ -130,22 +134,22 @@ header {
     justify-content: center;
     flex-basis: 15%;
 }
-header>div>button{
+header>div>#modelsNav>button{
     background-color:rgba(255,255,255,0);
     border:none;
     font-size: x-large;
     font-weight: 200;
-    margin-top: 20px;
+    margin: 1em 2em ;
 }
-header>div>button:hover{
+header>div>#modelsNav>button:hover{
     text-decoration:underline;
 }
-header>div>button:focus{
+header>div>#modelsNav>button:focus{
     border:none;
     text-decoration:underline;
     outline:none;
 }
-header>div>button:active{
+header>div>#modelsNav>button:active{
     border:none;
     text-decoration:underline;
     outline:none;
@@ -241,6 +245,7 @@ transform: scale(1.1);
 }
 .main-picture-img>img{
     object-fit:cover;
+    transform: scale(0.9);
     height:100vh;
     margin:auto;
 }
@@ -293,15 +298,14 @@ transform: scale(1.1);
     height: 50px;
     border:0.5px solid;
     border-bottom:none;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     margin-top: 100px;
     margin-right: 5px;
-    transition: linear 1s;
+    transition: linear 0.8s;
     background-color:#FFFFFFAA;
     
 }
 .carModel>p{
-    
     font-weight: 700;
     color:black;
     font-size: x-large;
@@ -341,16 +345,16 @@ transform: scale(1.1);
 }
 .buy-button{
     background-color: #428c59;
-    padding: 15px 75px;
+    padding: 15px 70px;
     color:#eee;
     border-radius:25px;
+    letter-spacing: 0.05em;
     border:none;
-    font-size:large;
+    font-size:1.1em;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3), 0 4px 10px 0 rgba(100, 100, 100, 0.3);
-    transition: padding 1s;
 }
 .buy-button:hover{
-    padding: 15px 90px;
+    background-color: #337246;
 }
 .specValue{
     font-size: xx-large;
@@ -519,6 +523,7 @@ cursor: pointer;
     transform: translateY(2.5px);
 }
 
+/*media queries*/
 @media screen and (max-width: 500px) { 
     #timeOut60s {
         bottom: none;
@@ -526,5 +531,38 @@ cursor: pointer;
         padding: none;
         width: 80%;
         height: 20%;
+    }
+}
+
+/*making navibar elements get closer */
+@media screen and (max-width: 1190px) { 
+    header>div>#modelsNav>button{
+        margin: 1em 0;
+    }
+    .main-picture-img>img{
+        transform: scale(0.6);
+    }
+}
+
+/* hidding navbar and making bigger bottom model buttons*/
+@media screen and (max-width: 970px) { 
+    #modelsNav {
+        display: none;
+    }
+    .main-picture-models {
+        left: 5%;
+    }
+    .carModel {
+        width: 20%;
+    }
+    .main-picture-img>img{
+        transform: scale(0.5);
+    }
+}
+
+/* smaller main images for phone*/
+@media screen and (max-width: 700px) { 
+    .main-picture-img>img{
+        transform: scale(0.3);
     }
 }
