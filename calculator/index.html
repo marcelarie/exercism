@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+    <meta name="description" content="150 words" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <div id="upper-buttons">
+            <div id="head-buttons">
+                <div id="button-1"></div>
+                <div id="button-2"></div>
+                <div id="button-3"></div>
+            </div>
+            <div id="switch-container">
+                <div class="left" id="switch-color"></div>
+            </div>
+        </div>
+        <div class="calculator__display">
+            <div id="history" class="display__history">0</div>
+            <div id="current" class="display__current">0</div>
+        </div>
+        <div id="buttons">
+            <button class="clear" data-clear>C</button>
+            <button class="negative" data-sign>+/-</button>
+            <button class="%" data-operator>%</button>
+            <button class="divide" data-operator>÷</button>
+            <button class="7" data-number>7</button>
+            <button class="8" data-number>8</button>
+            <button class="9" data-number>9</button>
+            <button class="X" data-operator>x</button>
+            <button class="4" data-number>4</button>
+            <button class="5" data-number>5</button>
+            <button class="6" data-number>6</button>
+            <button class="minus" data-operator>-</button>
+            <button class="1" data-number>1</button>
+            <button class="2" data-number>2</button>
+            <button class="3" data-number>3</button>
+            <button class="plus" data-operator>+</button>
+            <button class="0" data-number>0</button>
+            <button class="dot" data-number>.</button>
+            <button class="empty"></button>
+            <button class="equal" data-equal>=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

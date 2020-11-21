@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      span {
+        display: block;
+        margin: 16px 0;
+        padding: 4px;
+        outline: 1px solid lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise02()</code> the check your solution.
+      </p>
+      <p>
+        Complete the code of the <code>changeTextContent()</code> function
+        bellow to use the <code>getElementsByTagName</code> method to get the
+        <code>span</code> elements from bellow.
+      </p>
+      <p>
+        Then add to the existing text content the string:
+        <code>changed</code> and an empty space in between the words.
+      </p>
+      <p>
+        Then change the styles to have a css color of <code>blue</code> using
+        JavaScript.
+      </p>
+      <p>
+        If the element had the text <code>Monday</code> it should end up having
+        <code>Monday changed</code>.
+      </p>
+    </div>
+    <div>
+      <hr />
+      <div class="ex-wrapper">
+        <span>Monday</span>
+        <span>Tuesday</span>
+        <span>Wednesday</span>
+        <span>Thursday</span>
+        <span>Friday</span>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 02
+       *
+       * Finish the code of the function
+       */
+      function changeTextContent() {
+          let spanEl = document.getElementsByTagName('span');
+          for ( let i = 0; i < spanEl.length; i++ ) {
+              spanEl[i].innerText += ' ' + 'changed';
+              spanEl[i].style.color = 'blue';
+            }
+      }
+
+      /**
+       * JavaScript Exercises - 02
+       *
+       * Don’t change the code bellow this line
+       */
+      changeTextContent();
+    </script>
+    <script src="./__tests__/exercise-02.js"></script>
+  </body>
+</html>

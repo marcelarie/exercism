@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise12()</code> the check your solution.
+      </p>
+      <p>
+        Add a <code>click</code> event listener on the
+        <code>Add new element</code> button to execute the
+        <code>addElement</code> function to:
+      </p>
+      <ul>
+        <li>
+          add a new <code>li</code> child element of the
+          <code>list-container</code> <code>ul</code> list with the day name of:
+          <code>Monday</code>.
+        </li>
+        <li>
+          NOTE: this should be done using the
+          <code>addEventListener</code> method on the
+          <code>Add new element</code> button.
+        </li>
+        <li>
+          the <code>li</code> element should have the class of
+          <code>weekday-item</code>
+        </li>
+        <li>
+          you can use the <code>className</code> property to assign the class.
+        </li>
+        <li>
+          the new <code>li</code> element should be added using the
+          <code>insertBefore()</code> method on the
+          <code>list-container</code> parent node to insert the new
+          <code>li</code> as a first child element.
+        </li>
+        <li>
+          the new element should only be added once if you click the button more
+          than one time.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <hr />
+      <button id="add_element">
+        Add new element
+      </button>
+      <div class="ex-wrapper">
+        <ul class="list-container">
+          <li class="weekday-item">Tuesday</li>
+          <li class="weekday-item">Wednesday</li>
+          <li class="weekday-item">Thursday</li>
+          <li class="weekday-item">Friday</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 12
+       *
+       * Add the event listener and finish the code of the function
+       */
+        let btn = document.getElementById('add_element');
+        btn.addEventListener('click', addElement );
+      function addElement() {
+          let listItems = document.querySelectorAll('.weekday-item');
+          let list = document.querySelector('.list-container');
+          let newLi = document.createElement('li');
+          newLi.textContent = 'Monday';
+          newLi.classList.add('weekday-item');
+          if ( listItems.length === 4 ) {
+              list.insertBefore(newLi, listItems[0])
+          }
+      }
+    </script>
+    <script src="./__tests__/exercise-12.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise03()</code> the check your solution.
+      </p>
+      <p>
+        Complete the code of the <code>changeStyles()</code> function bellow to
+        use the <code>getElementsByClassName</code> method to get the elements
+        that have a class of <code>weekday-item</code> and change the font
+        weight to <code>bold</code> and the font size to <code>24px</code> using
+        JavaScript.
+      </p>
+    </div>
+    <div>
+      <hr />
+      <div class="ex-wrapper">
+        <ul>
+          <li class="weekday-item">Monday</li>
+          <li class="weekday-item">Tuesday</li>
+          <li class="weekday-item">Wednesday</li>
+          <li class="weekday-item">Thursday</li>
+          <li class="weekday-item">Friday</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 03
+       *
+       * Finish the code of the function
+       */
+      function changeStyles() {
+          let weekDay = document.getElementsByClassName('weekday-item');
+          console.log(weekDay)
+          for ( let i = 0; i < weekDay.length; i++ ) {
+              weekDay[i].style.fontWeight = 'bold';
+              weekDay[i].style.fontSize = '24px';
+          }
+      }
+
+      /**
+       * JavaScript Exercises - 03
+       *
+       * Don’t change the code bellow this line
+       */
+      changeStyles();
+    </script>
+    <script src="./__tests__/exercise-03.js"></script>
+  </body>
+</html>

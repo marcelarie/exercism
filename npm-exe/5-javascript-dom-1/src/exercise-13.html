@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise13()</code> the check your solution.
+      </p>
+      <p>
+        Add a <code>click</code> event listener on the
+        <code>Add HTML</code> button to execute the
+        <code>addHTML</code> function to:
+      </p>
+      <ul>
+        <li>
+          create an <code>li</code> child element of the
+          <code>list-container</code> <code>ul</code> list using the
+          <code>insertAdjacentHTML</code> so that the child element is the first
+          child element of the list, it has a class of
+          <code>weekday-item</code> and a text content of <code>Monday</code>.
+        </li>
+        <li>
+          the new li child element should be added using the
+          <code>insertAdjacentHTML</code> on the parent <code>ul</code> element
+          using the <code>afterbegin</code> position.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <hr />
+      <button id="add_element">
+        Add HTML
+      </button>
+      <div class="ex-wrapper">
+        <ul class="list-container">
+          <li class="weekday-item">Tuesday</li>
+          <li class="weekday-item">Wednesday</li>
+          <li class="weekday-item">Thursday</li>
+          <li class="weekday-item">Friday</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 13
+       *
+       * Add the event listener and finish the code of the function
+       */
+
+    let btn = document.getElementById('add_element');
+    btn.addEventListener('click', addHTML );
+      function addHTML() {
+          let list = document.querySelector('.list-container')
+          let condition = document.querySelectorAll('.weekday-item')
+          if ( condition.length === 4 ) {
+              list.insertAdjacentHTML('afterbegin', '<li class="weekday-item">Monday</li>')
+          }
+
+      }
+    </script>
+    <script src="./__tests__/exercise-13.js"></script>
+  </body>
+</html>

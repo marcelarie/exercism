@@ -1,0 +1,68 @@
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.weekday-item {
+  margin: 16px 0;
+  padding: 4px;
+}
+
+.subhead {
+  font-size: 18px;
+  line-height: 32px;
+  padding: 8px 12px;
+  background-color: aliceblue;
+  border: 2px solid lightgray;
+}
+
+code {
+  font-size: 16px;
+  color: darkorchid;
+  padding: 4px;
+  background-color: aliceblue;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 24px;
+}
+
+button {
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.ex-wrapper {
+  padding: 24px 0;
+  margin: 24px 0;
+}
+
+label {
+  margin-bottom: 24px;
+  display: block;
+  width: 200px;
+}
+
+input {
+  margin-top: 12px;
+  padding: 8px;
+  display: block;
+  width: 200px;
+}
+
+.img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}

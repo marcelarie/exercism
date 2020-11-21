@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    .list-container {
+      border: 1px solid lightgray;
+    }
+    .weekday-item {
+      background-color: aquamarine;
+    }
+  </style>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise09()</code> the check your solution.
+      </p>
+      <p>
+        Use the <code>addEventListener</code> method to add a
+        <code>click</code> event listener on the <code>list-container</code> to
+        remove the <code>li</code> child element when the
+        <code>li</code> element is clicked.
+      </p>
+      <p>
+        Clicking on <code>Tuesday</code> should remove <code>Tuesday</code>.
+      </p>
+      <p>Clicking on <code>Friday</code> should remove <code>Friday</code>.</p>
+      <p>
+        <code>NOTE:</code> learn how to use the
+        <code>event.target.matches("css selector")</code> method to see if the
+        <code>event.target</code> is the list item with the class of
+        <code>weekday-item</code> so that clicking on the <code>ul</code> list
+        doesn’t remove the list.
+      </p>
+    </div>
+    <div>
+      <hr />
+      <div class="ex-wrapper">
+        <ul class="list-container">
+          <li class="weekday-item">Monday</li>
+          <li class="weekday-item">Tuesday</li>
+          <li class="weekday-item">Wednesday</li>
+          <li class="weekday-item">Thursday</li>
+          <li class="weekday-item">Friday</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 09
+       *
+       * Add the event listener and finish the code of the function
+       */
+        let list = document.querySelector('.list-container');
+        list.addEventListener('click', removeItem );
+         function removeItem(event) {
+             if ( event.target.matches('.weekday-item')) {
+                 list.removeChild(event.target);
+             };
+         };
+    </script>
+    <script src="./__tests__/exercise-09.js"></script>
+  </body>
+</html>

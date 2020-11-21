@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assembler School JS DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="list">
+        <li class="list-item">
+          <a href="../index.html">Home</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h1>Instructions</h1>
+      <p class="subhead">
+        When you are finished execute in the browser console the function
+        <code>validateExercise19()</code> the check your solution.
+      </p>
+      <p>
+        Add a <code>click</code> event listener on the image to execute the
+        <code>onImageClick</code> function to change the
+        <code>src</code> attribute of the image to the one in the
+        <code>newSrc</code> variable.
+      </p>
+      <p>
+        You will have to get a reference to the image using the
+        <code>event.target</code> property of the event parameter of the
+        <code>onImageClick</code> function.
+      </p>
+      <p><code>event.target.src = "my-src"</code></p>
+      <p><code>event.target</code> will be the image that was clicked.</p>
+    </div>
+    <div>
+      <hr />
+      <div class="ex-wrapper">
+        <img src="./assets/img1.jpg" class="img" />
+      </div>
+    </div>
+    <script>
+      /**
+       * JavaScript Exercises - 19
+       *
+       * Add the event listener and finish the code of the function
+       */
+
+      function onImageClick(event) {
+        let newSrc = "./assets/img2.jpg";
+      }
+    </script>
+    <script src="./__tests__/exercise-19.js"></script>
+  </body>
+</html>
