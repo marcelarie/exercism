@@ -6,6 +6,7 @@ var colorContainer = document.getElementById('colorContainer');
 var carSpecs = document.getElementById('carSpecs');
 var carExtras = document.getElementById('carExtras');
 var hoverImageContainer = document.getElementById('hover-column');
+var colorValue='white';
 
 
 
@@ -13,6 +14,7 @@ hoverImageContainer.addEventListener('click', changeMainImage);
 
 function changeMainImage(e) {
     if (e.target.id != 'hover-column') {
+        
         mainImage.src = e.target.src;
     }
 }
@@ -24,9 +26,10 @@ function changeColor(e) {
         var car = cars.filter(car => {
             return car.id == carId;
         });
-        mainImage.src = car[0].color[event.target.value].img[0];
+        mainImage.src = car[0].color[e.target.value].img[0];
         hoverImageContainer.innerHTML = "";
-        car[0].color[event.target.value].img.forEach(img => {
+        colorValue=e.target.id;
+        car[0].color[e.target.value].img.forEach(img => {
             let i = document.createElement("img");
             i.setAttribute("class", 'clickable');
             i.setAttribute("src", img);
@@ -39,10 +42,13 @@ var modelContainer = document.getElementById('modelContainer');
 modelContainer.addEventListener('click', changeCar);
 
 function changeCar(e) {
-    if (e.target.id != 'modelContainer') {
-        carId = e.target.id;
-        changeCarInfo();
+    if(e.target.nodeName=='P'){
+        console.log(e.target.parentNode)
+        carId=e.target.parentNode.id;
+    }else if (e.target.id != 'modelContainer') {
+        console.log(e.target)
     }
+    changeCarInfo();
 }
 
 var navBar = document.getElementById('navBar');
@@ -61,6 +67,7 @@ function changeCarInfo() {
     var car = cars.filter(c => {
         return c.id == carId;
     });
+
     mainImage.src = car[0].color[0].img[0];
     hoverImageContainer.innerHTML = "";
     car[0].color[0].img.forEach(imag => {

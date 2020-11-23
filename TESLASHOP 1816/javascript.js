@@ -1,5 +1,6 @@
 function activateCount() {
     console.log('activateCount RUNNING')
+    navibar.classList.add('displayNone')
     // Pop up message every minute
     let timer60s = setInterval(() => {
         let minutesLeft = document.getElementById('minutesLeft')
@@ -47,6 +48,17 @@ let person = {
     phone: "",
     regularAddress: "",
 }
+let personCar={
+    productId:'',
+    color: '',
+    extras: [],
+    price:'',
+    type: '',
+    date: '',
+    gift: false,
+    shipping: '',
+    total: '',
+};
 let userFormIsValid = {
     username: false,
     email: false,
@@ -60,7 +72,6 @@ let addressFormIsValid = {
     address: false,
     postalCode: false, country: false, phoneCode: false,
     phone: false,
-    regularAddress: false,
 }
 let currentPage = 1;
 let countDown = 5;
@@ -72,51 +83,76 @@ let shipping = document.getElementById("step4");
 let thanksPage = document.getElementById("step5");
 // display: none; class
 let current = document.querySelector('.pageActive')
+//Progress bar
+let progressContainer=document.getElementById('progressBarContainer');
+let progressBar=document.getElementById('progressBar');
 // next buttons
 let btnNext = document.getElementById("next");
 let btnUser = document.getElementById("next2");
 let btnForm = document.getElementById("next3");
 let btnShipping = document.getElementById("next4");
 let btnFinish = document.getElementById("next5");
-let okButton = document.querySelector('.okButton')
+let okButton = document.querySelector('.okButton');
+let navibar = document.getElementById('modelsNav');
+let termsDisabled = document.getElementById("termsCheck");
 // reset btn
-let btnReset = document.getElementById("reset");
-// timeOutPop 
-let timeOutPop = document.getElementById('timeOut5m')
-let timeOutPop1m = document.getElementById('timeOut60s')
+let btnResetUser = document.getElementById("clear2");
+let btnResetAddress = document.getElementById("clear3");
+let btnResetShipping = document.getElementById("clear4");
+// timeOutPop
+let timeOutPop = document.getElementById('timeOut5m');
+let timeOutPop1m = document.getElementById('timeOut60s');
+// terms and conditions
+let termsCheck = document.getElementById('termsCheck');
 
 let inputUserForm = document.querySelectorAll(".formUser__input");
 let inputAddressForm = document.querySelectorAll(".formAddress__input");
 
 
 // shippingType
-let deliveryExcepted = document.getElementById('deliveryExcepted')
+let deliveryExcepted = document.getElementById('deliveryExcepted');
 let freeShipping = document.getElementById('freeShipping');
 let extraShipping = document.getElementById('extraShipping');
 let premiumShipping = document.getElementById('premiumShipping');
+let premiumCost = document.getElementById('premiumCost');
+let extraCost = document.getElementById('extraCost');
+let noCost = document.getElementById('noCost');
+
+// premium shipping
 let date = new Date();
-// free shipping
 let todayPlus24h = new Date(date.setDate(date.getDate() + 1)).toString().slice(4, 21);
 let todayPlus30h = new Date(date.setTime(date.getTime() + (6 * 60 * 60 * 1000))).toString().slice(4, 21)
 // extra shipping
-let todayPlus48h = new Date(date.setDate(date.getDate() + 1)).toString().slice(4, 21);
+date = new Date();
+let todayPlus48h = new Date(date.setDate(date.getDate() + 2)).toString().slice(4, 21);
 let todayPlus54h = new Date(date.setTime(date.getTime() + (6 * 60 * 60 * 1000))).toString().slice(4, 21);
-// premium shipping 
-let todayPlus72h = new Date(date.setDate(date.getDate() + 1)).toString().slice(4, 21);
+// free shipping
+date = new Date();
+let todayPlus72h = new Date(date.setDate(date.getDate() + 3)).toString().slice(4, 21);
 let todayPlus78h = new Date(date.setTime(date.getTime() + (6 * 60 * 60 * 1000))).toString().slice(4, 21);
 
-// Free Shipping 
-freeShipping.addEventListener('click', () => {
+// Free Shipping
+freeShipping.addEventListener('click', freeF)
+function freeF(){
     deliveryExcepted.innerHTML = todayPlus72h + ' and ' + todayPlus78h + '.'
-})
+    personCar.shipping = noCost.innerHTML;
+}
 // Extra Shipping
-extraShipping.addEventListener('click', () => {
+extraShipping.addEventListener('click', extraF)
+function extraF(){
     deliveryExcepted.innerHTML = todayPlus48h + ' and ' + todayPlus54h + '.'
-})
+    personCar.shipping = extraCost.innerHTML;
+}
 // Premium Shipping
-premiumShipping.addEventListener('click', () => {
+premiumShipping.addEventListener('click', premiumF);
+//() => {    deliveryExcepted.innerHTML = todayPlus24h + ' and ' + todayPlus30h + '.'}
+function premiumF(){
     deliveryExcepted.innerHTML = todayPlus24h + ' and ' + todayPlus30h + '.'
-})
+    personCar.shipping = premiumCost.innerHTML;
+}
+
+// Terms and Conditions check
+termsCheck.addEventListener('change', showPurchaseInfo);
 
 // OK button from pop up message
 okButton.addEventListener('click', () => history.go());
@@ -128,11 +164,11 @@ inputUserForm.forEach((input) => {
 inputAddressForm.forEach((input) => {
     input.addEventListener('blur', validateAllForms);
 });
-
-//btnReset.addEventListener("click",(e)=>{
-//e.preventDefault();
-// clearReset()
-//})
+btnResetUser.addEventListener("click",callClear)
+function callClear(e){
+    e.preventDefault();
+    clearReset()
+}
 function callControl(e) {
     e.preventDefault();
     controlPage();
@@ -142,44 +178,67 @@ function controlPage() {
     switch (currentPage) {
         case 1:
             console.log("case1")
+            homePageButtons()
             btnNext.removeEventListener("click", callControl, true);
             btnUser.addEventListener("click", callControl, true);
             homePage.classList.toggle("pageActive");
             formUser.classList.toggle("pageActive");
+            progressContainer.style.display='block';
+            progressBar.style.height='10%';
+            progressBar.style.marginTop='90%';
             currentPage++;
             break;
         case 2:
             console.log("case2");
             if (validateUserForm()) {
-                btnUser.removeEventListener("click", callControl, true)
-                btnForm.addEventListener("click", callControl, true);
+                removeCase2();
                 formUser.classList.toggle("pageActive");
                 formAddress.classList.toggle("pageActive");
+                progressContainer.style.display='block';
+                progressBar.style.height='38%';
+                progressBar.style.marginTop='62%';
                 currentPage++;
                 break;
             } else {
                 document.querySelector(".formUser p").classList.toggle("errorMessageActive")
-                Object.keys(userFormIsValid).forEach(e => person[e] = false)
+                Object.keys(userFormIsValid).map(e => userFormIsValid[e] = false)
                 setTimeout(() => document.querySelector(".formUser p").classList.toggle("errorMessageActive"), 3000)
                 break;
             }
         case 3:
             console.log("case3")
-            //validateFormAddress(); to do
-            btnForm.removeEventListener("click", callControl, true)
-            btnShipping.addEventListener("click", callControl, true);
-            formAddress.classList.toggle("pageActive");
-            shipping.classList.toggle("pageActive");
-            currentPage++;
+             if(validateFormAddress()){
+                console.log("validado address")
+                removeCase3();
+                formAddress.classList.toggle("pageActive");
+                shipping.classList.toggle("pageActive");
+                progressContainer.style.display='block';
+                progressBar.style.height='67%';
+                progressBar.style.marginTop='33%';
+                currentPage++;
+             }else {
+                document.querySelector(".errorAddressMessage").classList.toggle("errorMessageActive")
+                setTimeout(() => document.querySelector(".errorAddressMessage").classList.toggle("errorMessageActive"), 3000)
+                break;
+            }
             break;
         case 4:
             console.log("case4")
-            btnShipping.removeEventListener("click", callControl, true)
-            btnFinish.addEventListener("click", callControl, true);
-            shipping.classList.toggle("pageActive");
-            thanksPage.classList.toggle("pageActive");
-            currentPage++;
-            break;
+            if(validateShipping()){
+                removeCase4();
+                shipping.classList.toggle("pageActive");
+                thanksPage.classList.toggle("pageActive");
+                progressContainer.style.display='block';
+                progressBar.style.height='100%';
+                progressBar.style.marginTop='0%';
+                currentPage++;
+                break;
+            }else{
+                console.log("seleccione un envio")
+                document.querySelector(".errorShippingMessage").classList.toggle("errorMessageActive")
+                setTimeout(() => document.querySelector(".errorShippingMessage").classList.toggle("errorMessageActive"), 3000)
+                break;
+            }
         case 5:
             console.log("case5")
             currentPage = 0;
@@ -187,9 +246,45 @@ function controlPage() {
             btnNext.addEventListener("click", callControl, true);
             thanksPage.classList.toggle("pageActive");
             homePage.classList.toggle("pageActive");
+            clearAll();
+            progressContainer.style.display='none';
+                progressBar.style.height='0%';
             currentPage++;
             break;
     }
+}
+function removeCase2(){
+    btnUser.removeEventListener("click", callControl, true)
+    btnForm.addEventListener("click", callControl, true);
+    btnResetUser.removeEventListener("click",callClear);
+    btnResetAddress.addEventListener("click",callClear);
+    inputUserForm.forEach((input) => {
+        input.removeEventListener('blur', validateAllForms);
+    });
+}
+
+function btnDisabled(){
+    (termsDisabled.checked)?btnFinish.disabled=false:btnFinish.disabled=true
+}
+
+function removeCase3(){
+    btnForm.removeEventListener("click", callControl, true);
+    btnShipping.addEventListener("click", callControl, true);
+    btnResetAddress.removeEventListener("click",callClear);
+    btnResetShipping.addEventListener("click",callClear);
+    inputAddressForm.forEach((input) => {
+        input.removeEventListener('blur', validateAllForms);
+    });
+}
+
+function removeCase4(){
+    btnShipping.removeEventListener("click", callControl, true)
+    btnFinish.addEventListener("click", callControl, true);
+    btnResetShipping.removeEventListener("click",callClear);
+    freeShipping.removeEventListener('click', freeF);
+    extraShipping.removeEventListener('click', extraF);
+    premiumShipping.removeEventListener('click', premiumF);
+    termsDisabled.addEventListener("checked",btnDisabled)
 }
 
 function clearReset() {
@@ -208,16 +303,17 @@ function clearReset() {
             break;
     }
 }
-
+/* START OF VALIDATION FORMS */
 function validateAllForms(event) {
     console.log(event)
-    const usernameRegex = /^[a-z0-9_-]{3,16}$/;
+    const usernameRegex = /^\S{5,20}$/
     const emailRegex = /^(([^<>()\[\]\\.,:\s@"]+(\.[^<>()\[\]\\.,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const passwordRegex = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,20}/;
     const firstLastNameRegex = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,20}$/;
+    const postCodeRegex=/^\d{5}$/
+    const phoneRegex=/^\d{9}$/
     switch (event.target.name) {
         case "username":
-            //Alphanumeric string that may include _ and – having a length of 3 to 16 characters –
             console.log(usernameRegex.test(event.target.value))
             if (usernameRegex.test(event.target.value)) {
                 document.getElementById(event.target.id).classList.remove("error__input") /// set erase attribute in case that does not remove by itself.
@@ -318,7 +414,7 @@ function validateAllForms(event) {
             if (event.target.value.length <= 50) {
                 document.getElementById(event.target.id).classList.remove("error__input") /// set erase attribute in case that does not remove by itself.
                 person.address1 = event.target.value
-                addressFormIsValid.address1 = true;
+                addressFormIsValid.address = true;
                 console.log('Correct address')
             } else {
                 console.log('Incorrect address')
@@ -333,7 +429,7 @@ function validateAllForms(event) {
             if (event.target.value.length <= 50) {
                 document.getElementById(event.target.id).classList.remove("error__input") /// set erase attribute in case that does not remove by itself.
                 person.address2 = event.target.value
-                addressFormIsValid.address2 = true;
+                addressFormIsValid.address = true;
                 console.log('Correct address')
             } else {
                 console.log('Incorrect address')
@@ -345,7 +441,7 @@ function validateAllForms(event) {
         case "postalCode":
             console.log(event);
             //Max. length: 50
-            if (event.target.value.length <= 10) {
+            if (postCodeRegex.test(event.target.value)) {
                 document.getElementById(event.target.id).classList.remove("error__input") /// set erase attribute in case that does not remove by itself.
                 person.postalCode = event.target.value
                 addressFormIsValid.postalCode = true;
@@ -372,7 +468,7 @@ function validateAllForms(event) {
         case "phone":
             console.log(event);
             //Max. length: 50
-            if (event.target.value.length <= 50) {
+            if (phoneRegex.test(event.target.value)) {
                 document.getElementById(event.target.id).classList.remove("error__input") /// set erase attribute in case that does not remove by itself.
                 person.phone = event.target.value
                 addressFormIsValid.phone = true;
@@ -386,11 +482,12 @@ function validateAllForms(event) {
             break;
         case "regularAddress":
             console.log(event);
-            person.regularAddress = event.target.value
+            person.regularAddress = event.target.checked
             addressFormIsValid.regularAddress = true;
             break;
     }
 }
+/END * VALIDATION FORMS */
 
 function validateUserForm() {
     return Object.values(userFormIsValid).filter((value) => (value === false)).length == 0
@@ -399,4 +496,58 @@ function validateUserForm() {
 function validateFormAddress() {
     return Object.values(addressFormIsValid).filter((value) => (value === false)).length == 0
 
+}
+
+function homePageButtons(){
+    personCar.productId=carId;
+    if(document.querySelector("#Autopilot").checked){
+        personCar.extras.push("Autopilot")
+    }
+    if(document.querySelector("#Performance").checked){
+        personCar.extras.push("Performance")
+    }
+    personCar.color=colorValue;
+    personCar.price=carPrice.textContent
+    hoverImageContainer.removeEventListener('click', changeMainImage);
+    colorContainer.removeEventListener('click', changeColor);
+    modelContainer.removeEventListener('click', changeCar);
+    navBar.removeEventListener('click', navBarFunctions);
+}
+
+function validateShipping(){
+    let validate=false
+    if(freeShipping.checked){
+        personCar.type=freeShipping.id
+        validate=true
+    }else if(extraShipping.checked){
+        personCar.type=extraShipping.id
+        validate=true
+    }else if(premiumShipping.checked){
+        personCar.type=premiumShipping.id
+        validate=true
+    }
+    personCar.date=deliveryExcepted.textContent;
+    if(document.getElementById("input__gift").checked){
+        personCar.gift=true;
+        personCar.giftMessage=document.getElementById("gift").textContent;
+    }
+    return validate;
+}
+
+function totalCost() {
+    let extrasC = 0.0;
+    if (personCar.extras.length === 2 ) {
+        extrasC += 24490;
+    } else if ( personCar.extras[0] === 'Autopilot') {
+        extrasC += 7500;
+    } else if ( personCar.extras[0] === 'Performance') {
+        extrasC += 16990;
+    }
+    if ( personCar.shipping === 'Free' ) {
+        let total = parseFloat(personCar.price) + extrasC;
+        return total;
+    } else {
+        let total = parseFloat(personCar.price.slice(0,-1)) + extrasC + parseFloat(personCar.shipping.slice(0,-1))
+        return total;
+    }
 }
